@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="min_touch_size">36dp</dimen>
+    <dimen name="height_closed">40dp</dimen>
+
+</resources>

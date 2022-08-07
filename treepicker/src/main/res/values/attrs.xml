@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TreePicker">
+        <attr name="tabItemPadding" format="dimension" />
+        <attr name="tabHeight" format="dimension" />
+        <attr name="tabTextSelectedColor" format="color" />
+        <attr name="tabTextNormalColor" format="color" />
+        <attr name="tabUnderline" format="reference" />
+        <attr name="tabTextSize" format="dimension" />
+        <attr name="levelTextSize" format="dimension" />
+        <attr name="levelPadding" format="dimension" />
+        <attr name="levelCheckDrawable" format="reference" />
+        <attr name="levelTextSelectedColor" format="color" />
+        <attr name="levelTextNormalColor" format="color" />
+    </declare-styleable>
+
+</resources>

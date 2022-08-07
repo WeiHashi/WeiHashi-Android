@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.MapActivity">
+
+        <include layout="@layout/widget_actionbar" />
+
+        <com.lkdont.widget.BottomDrawerContainer
+            android:id="@+id/drawerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.baidu.mapapi.map.MapView
+                    android:id="@+id/map"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <ImageButton
+                    android:id="@+id/back_my_location"
+                    android:src="@drawable/my_location"
+                    android:background="@drawable/shape_my_location_background"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="60dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@null" />
+
+            </RelativeLayout>
+
+            <com.lkdont.widget.BottomDrawer
+                android:id="@+id/bottomDrawer"
+                android:layout_width="match_parent"
+                android:layout_height="493dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/shape_grey_10r_lt_rt"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:id="@+id/grip"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="3dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/shape_white_10r" />
+
+                    </FrameLayout>
+
+                    <cn.devmeteor.treepicker.TreePicker
+                        android:id="@+id/picker"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+            </com.lkdont.widget.BottomDrawer>
+
+        </com.lkdont.widget.BottomDrawerContainer>
+
+
+    </LinearLayout>
+</layout>

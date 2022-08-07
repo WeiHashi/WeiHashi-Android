@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="cn.devmeteor.weihashi.viewmodel.UserViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            app:goneUnless="@{vm.isJwBound().booleanValue()}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="姓名"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="@{vm.name}"
+                android:textSize="18sp"
+                android:background="@null"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <View
+            app:goneUnless="@{vm.isJwBound().booleanValue()}"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/grey" />
+
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="学号"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/jw_input_student_id"
+                android:hint="学号"
+                android:inputType="numberDecimal"
+                android:text="@{vm.studentId}"
+                app:editable="@{!vm.isJwBound().booleanValue()}"
+                android:textSize="18sp"
+                android:background="@null"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <View
+            app:goneUnless="@{!vm.isJwBound().booleanValue()}"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/grey" />
+
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            app:goneUnless="@{!vm.isJwBound().booleanValue()}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="密码"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/jw_input_password"
+                android:hint="密码"
+                android:inputType="textPassword"
+                android:textSize="18sp"
+                android:background="@null"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+            android:id="@+id/unbind_jw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:goneUnless="@{vm.isJwBound().booleanValue()}"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="10dp"
+            android:text="解绑"
+            android:textColor="@color/main"
+            app:qmui_isRadiusAdjustBounds="true"
+            app:qmui_borderColor="@color/main"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/bind_jw"
+            android:text="绑定"
+            app:goneUnless="@{!vm.isJwBound().booleanValue()}"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/shape_round_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="Tips：由于此功能基于教务平台实现，只能在教务平台可用时使用，如提示连接失败，请访问新版教务平台http://jwpt.hrbnu.edu.cn/jsxsd/，如能正常访问可重新打开本页面尝试。"
+            android:textColor="#999999"
+            app:goneUnless="@{!vm.isJwBound().booleanValue()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="Tips：解绑将同时清除所有数据（包括课程数据和成绩数据等）。"
+            android:textColor="#999999"
+            app:goneUnless="@{vm.isJwBound().booleanValue()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</layout>

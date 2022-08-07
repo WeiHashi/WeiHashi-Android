@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="cn.devmeteor.weihashi.viewmodel.TimetableViewModel" />
+
+        <import
+            alias="util"
+            type="cn.devmeteor.weihashi.utils.Util" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.TimetableActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fitsSystemWindows="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/timetable_back"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/selector_circle_press"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/arrow_back" />
+
+
+                <LinearLayout
+                    android:id="@+id/timetable_choose_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="我的课表"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{vm.lessons.empty?`暂无数据`:util.INSTANCE.getWeekText(vm.selectedWeek)}"
+                        android:textColor="@color/main"
+                        app:drawableEndCompat="@drawable/arrow_down" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/timetable_add_lesson"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/selector_circle_press"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/add_lesson" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/grey" />
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/timetable_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.scwang.smart.refresh.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlEnableLastTime="false"
+                app:srlTextFailed="更新失败"
+                app:srlTextPulling="下拉更新课表数据" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <cn.devmeteor.weihashi.widget.lesson.Timetable
+                    android:id="@+id/timetable"
+                    goneUnless="@{!vm.lessons.empty}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:tv_count_per_day="14" />
+
+                <TextView
+                    goneUnless="@{vm.lessons.empty}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="下拉获取课表数据"
+                    android:textColor="@color/qmui_config_color_gray_5"
+                    android:textSize="18sp" />
+
+            </FrameLayout>
+
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    </LinearLayout>
+</layout>

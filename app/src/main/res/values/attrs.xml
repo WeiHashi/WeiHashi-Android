@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TabItem">
+        <attr name="text" format="string" />
+        <attr name="initStatus" format="boolean" />
+        <attr name="normalSrc" format="reference" />
+        <attr name="normalTextColor" format="color" />
+        <attr name="selectedSrc" format="reference" />
+        <attr name="selectedTextColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="WeekCheckView">
+        <attr name="week" format="string" />
+    </declare-styleable>
+
+</resources>

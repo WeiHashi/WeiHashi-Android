@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.MainActivity">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/main_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:overScrollMode="never" />
+
+        <View
+            android:background="@color/grey"
+            android:layout_width="match_parent"
+            android:layout_height="2px" />
+
+        <cn.devmeteor.weihashi.widget.TabBar
+            android:id="@+id/main_tab"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <cn.devmeteor.weihashi.widget.TabItem
+                app:text="首页"
+                app:initStatus="true"
+                app:normalSrc="@drawable/home_normal"
+                app:selectedSrc="@drawable/home_selected"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <cn.devmeteor.weihashi.widget.TabItem
+                app:text="消息"
+                app:normalSrc="@drawable/message_normal"
+                app:selectedSrc="@drawable/message_selected"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <cn.devmeteor.weihashi.widget.TabItem
+                app:text="我的"
+                app:normalSrc="@drawable/user_normal"
+                app:selectedSrc="@drawable/user_selected"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </cn.devmeteor.weihashi.widget.TabBar>
+
+    </LinearLayout>
+</layout>

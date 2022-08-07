@@ -1,0 +1,5 @@
+include ':responseGenerator'
+include ':treepicker'
+include ':bottomdrawerlayout'
+include ':app'
+rootProject.name = "WeiHaShi"

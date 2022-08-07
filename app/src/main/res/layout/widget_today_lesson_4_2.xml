@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_today_lesson_wrapper"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_today_lesson_header">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="课程名称"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="上课时间"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="上课地点"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:background="#fafafa"
+        android:id="@+id/widget_today_tips"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="今天没有课，可以好好休息一下"
+        android:layout_marginBottom="8dp"
+        android:textColor="#ababab"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:background="#fafafa"
+        android:id="@+id/widget_today_lessons"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/widget_index_lesson_toolbar"
+        android:background="@drawable/shape_widget_today_lesson_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/widget_index_lesson_page_before"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="3dp" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/widget_index_lesson_page_indicator"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:id="@+id/widget_index_lesson_page_next"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="3dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
